@@ -9,7 +9,7 @@ class EmployeeList(APIView):
         employees = Employee.objects.all()
         serializer = EmployeeSerializer(employees, many=True)
         return Response(serializer.data)
-
+#
     def post(self, request):
         serializer = EmployeeSerializer(data=request.data)
         if serializer.is_valid():
